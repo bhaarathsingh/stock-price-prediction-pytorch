@@ -1,0 +1,93 @@
+{
+  "label": "SYNTHETIC random walk",
+  "task": "one-step-ahead observed-history evaluation",
+  "config": {
+    "lookback": 29,
+    "hidden_size": 32,
+    "num_layers": 2,
+    "epochs": 200,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "patience": 20,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.1,
+    "seed": 42,
+    "device": "cpu"
+  },
+  "device_used": "cpu",
+  "best_epoch": 113,
+  "epochs_run": 133,
+  "data_sha256": "6b19df3809b2f5d653b049125b86bf61da398f06ccf8b3ebf2b14d568d9a5740",
+  "rows": 800,
+  "splits": {
+    "train": {
+      "targets": 539,
+      "first_target": "2020-02-11",
+      "last_target": "2022-03-04"
+    },
+    "validation": {
+      "targets": 77,
+      "first_target": "2022-03-07",
+      "last_target": "2022-06-21"
+    },
+    "test": {
+      "targets": 155,
+      "first_target": "2022-06-22",
+      "last_target": "2023-01-24"
+    }
+  },
+  "scaler": {
+    "mean": 99.3257243464869,
+    "scale": 5.231259969756515,
+    "fit_rows": 568,
+    "fit_through": "2022-03-04"
+  },
+  "metrics": {
+    "train": {
+      "lstm": {
+        "mae": 0.9018686661951619,
+        "rmse": 1.1367990394204128,
+        "direction_accuracy": 0.5584415584415584
+      },
+      "persistence": {
+        "mae": 0.9217926509459616,
+        "rmse": 1.1600306538915464,
+        "direction_accuracy": 0.0
+      }
+    },
+    "validation": {
+      "lstm": {
+        "mae": 0.9734748310703698,
+        "rmse": 1.1898935970760591,
+        "direction_accuracy": 0.5454545454545454
+      },
+      "persistence": {
+        "mae": 0.9934084219867044,
+        "rmse": 1.2099607592332797,
+        "direction_accuracy": 0.0
+      }
+    },
+    "test": {
+      "lstm": {
+        "mae": 2.8548724761114275,
+        "rmse": 3.754749920114343,
+        "direction_accuracy": 0.5419354838709678
+      },
+      "persistence": {
+        "mae": 0.8224054927499771,
+        "rmse": 1.0234439069649262,
+        "direction_accuracy": 0.0
+      }
+    }
+  },
+  "next_observation": {
+    "as_of": "2023-01-24",
+    "lstm": 89.49647521972656,
+    "persistence": 88.93900509656632
+  },
+  "versions": {
+    "python_torch": "2.14.0+cpu",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}
